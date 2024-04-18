@@ -25,13 +25,15 @@ export default function App() {
       Animated.spring(offset.y, {
         toValue:0,
         speed:4,
-        bounciness: 40,        
+        bounciness: 40,   
+        useNativeDriver: true,     
       }),
       Animated.timing(
         opacity,
         //logo.x,
         {toValue:1, 
         duration: 200, 
+        useNativeDriver: true,
        }) 
     ]).start();
 
@@ -44,11 +46,13 @@ export default function App() {
         logo.x, {
           toValue:55, 
           duration: 100,
+          useNativeDriver: false,
         }),
         Animated.timing(        
           logo.y, {
             toValue: 65, 
-            duration: 100,           
+            duration: 100,       
+            useNativeDriver: false,    
           })        
     ]).start();    
 
@@ -61,7 +65,7 @@ export default function App() {
         logo.x, {
           toValue: 130, 
           duration: 100,
-          useNativeDriver: false
+          useNativeDriver: true
         }),
         Animated.timing(        
           logo.y, {
@@ -144,8 +148,8 @@ const styles = StyleSheet.create({
 
   containerLogo:{
     flex: 1,   
-    justifyContent: 'center'
-    //backgroundColor: 'red'
+    justifyContent: 'center',
+    backgroundColor: 'red'
       
   },
   container: {
@@ -153,8 +157,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: '90%',
-    paddingBottom: 50
-    //backgroundColor: 'red'
+    paddingBottom: 50,
+    backgroundColor: 'blue'
   },
   input: {
     backgroundColor: '#fff',
